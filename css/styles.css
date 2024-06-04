@@ -91,9 +91,12 @@ img {
 .header {
     /* padding-top: 24px;
     padding-bottom: 24px; */
+    border-bottom: 1px solid #ECECEC; 
+}
+
+.header > .container {
     display: flex;
     align-items: center;
-
 }
 
 .logo {
@@ -129,13 +132,24 @@ img {
 }
 
 .header-link {
+    position: relative;
     padding-top: 32px;
     padding-bottom: 32px;
 
     color: var(--primery-text-color);
 }
 
+.header-link.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
 
+    width: 100%;
+        height: 4px;
+        background: var(--accent-color);
+        border-radius: 2px
+}
 
 .header-address {
     display: flex;
@@ -267,9 +281,38 @@ align-items: center;
 }
 
 .products-item {
+    position: relative;
     width: calc((100% - 60px) / 3);
 }
 
+.products-item::before {
+    content: "";
+        position: absolute;
+        background: rgba(47, 48, 58, 0.80);
+        
+        bottom: 0px;
+
+        width: 100%;
+        height: 70px;
+}
+
+.products-item-title {
+ position: absolute;
+ 
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ bottom: 0;
+
+ width: 100%;
+ height: 70px;
+
+ color: var(--white-color);
+
+font-weight: 700;
+letter-spacing: 0.42px;
+}
 /* Team */
 
 /* background: white;
@@ -537,8 +580,35 @@ padding: 6px 22px;
     width: calc((100% - 60px) / 3);
 }
 
+
+
+.portfolio-card-overlay {
+position: relative;
+}
+
 .portfolio-img {
-    margin-bottom: 20px;
+
+}
+
+.overlay-description {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.90);
+
+    padding: 63px 20px;
+}
+
+.description-text {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.54px;
+    color: var(--white-color);
+}
+
+.portfolio-card-description {
+    padding: 20px 24px;
 }
 
 .portfolio-card-title {
@@ -560,3 +630,54 @@ padding: 6px 22px;
 
    margin-bottom: 20px;
 }
+
+/* Модальне вікно */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.20)
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 528px;
+    height: 581px;
+    background: white;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.20);
+    border-radius: 4px
+}
+
+.button-close{
+    position: absolute;
+    display: flex;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+    cursor: pointer;
+}
+    
+
+/* Модальне вікно з формою заявки відкривається по натисканню на кнопку "Замовити послугу" . Для того щоб скрипт спрацював,
+необхідно додати до розмітки спеціальні атрибути,
+за якими скрипт шукає елементи: data-modal-open - на кнопку відкриття модального вікна. data-modal-close - на кнопку закриття модального вікна. data-modal - на бекдроп модального вікна. */

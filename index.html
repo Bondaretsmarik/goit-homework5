@@ -20,13 +20,13 @@
 <body>
 
     <!-- Header -->
-    <header class="header container">
-        <!-- <div class="container"> -->
+    <header class="header">
+        <div class="container">
     <nav class="header-nav">
         <a href="./index.html" lang="en" class="logo link"> <span class="logo-accent">Web</span>Studio </a>
 
         <ul class="header-list list">
-            <li class="header-item"><a class="header-link link" href="./index.html">Студія</a></li>
+            <li class="header-item"><a class="header-link link current" href="./index.html">Студія</a></li>
             <li class="header-item"><a class="header-link link" href="./portfolio.html">Портфоліо</a></li>
             <li class="header-item"><a class="header-link link" href="">Контакти</a></li>
         </ul>
@@ -51,7 +51,7 @@
             +38 096 111 11 11
             </a></li>
     </ul>
-    <!-- </div> -->
+    </div>
 </header>
 
     <main>
@@ -60,7 +60,7 @@
 <section class="hero">
 <div class="container">
     <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-    <button type="button" class="hero-button">Замовити послугу</button>
+    <button type="button" class="hero-button" data-modal-open>Замовити послугу</button>
 </div>
 </section>
 
@@ -116,11 +116,14 @@
     <h2 class="products-title title">Чим ми займаємося</h2>
     <ul class="products-list list">
         <li class="products-item"><img class="products-image" src="./images/img.jpg" alt="Десктопні додатки" width="370">
+            <h3 class="products-item-title">ДЕСКТОПНІ ДОДАТКИ</h3>
         </li>
         <li class="products-item"><img class="products-image" src="./images/img-1.jpg" alt="Мобільні додатки" width="370">
+            <h3 class="products-item-title">МОБІЛЬНІ ДОДАТКИ</h3>
         </li>
         <li class="products-item"><img class="products-image" src="./images/img-2.jpg" alt="Дизайнерські рішення"
-                width="370"></li>
+                width="370">
+            <h3 class="products-item-title">ДИЗАЙНЕРСЬКІ РІШЕННЯ</h3></li>
     </ul>
 </div>
 
@@ -290,6 +293,18 @@
     </div>
 </section>
 
+<!-- Модальне вікно -->
+
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+       <div class="button-close" data-modal-close>
+        <svg width="11px" height="11px" class="icon-close">
+            <use href="./images/icons.svg#icon-close-black"></use>
+        </svg>
+       </div>
+    </div>
+</div>
+
 </main>
 
 <!-- Footer -->
@@ -332,6 +347,8 @@
     </div>
 </div>
     </footer>
+
+<script src="./modal.js"></script>
 
 </body>
 </html>
