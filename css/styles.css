@@ -634,11 +634,6 @@ transform: translateY(0);
 position: relative;
 overflow: hidden;
 }
-
-.portfolio-img {
-
-}
-
 .overlay-description {
     position: absolute;
     top: 0;
